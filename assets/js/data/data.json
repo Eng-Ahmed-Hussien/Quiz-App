@@ -1,0 +1,77 @@
+[
+  {
+    "question": "1. What does HTTP stand for in web programming?",
+    "options": [
+      "a) Hyperlink Text Transfer Protocol",
+      "b) Hypertext Transfer Protocol",
+      "c) High Traffic Transfer Protocol",
+      "d) Hyper Transfer Text Protocol"
+    ],
+    "correct_answer": "b) Hypertext Transfer Protocol"
+  },
+  {
+    "question": "2. What is the abbreviation for CSS?",
+    "options": [
+      "a) Computer Style Sheet",
+      "b) Creative Style System",
+      "c) Cascading Style Sheet",
+      "d) Colorful Style Sheet"
+    ],
+    "correct_answer": "c) Cascading Style Sheet"
+  },
+  {
+    "question": "3. Which language runs in a web browser?",
+    "options": ["a) Java", "b) C", "c) Python", "d) JavaScript"],
+    "correct_answer": "d) JavaScript"
+  },
+  {
+    "question": "4. What does HTML stand for?",
+    "options": [
+      "a) Hypertext Markup Language",
+      "b) Hypertext Markdown Language",
+      "c) Hyperloop Machine Language",
+      "d) Helicopters Terminals Motorboats Lamborghinis"
+    ],
+    "correct_answer": "a) Hypertext Markup Language"
+  },
+  {
+    "question": "5. What year was JavaScript launched?",
+    "options": ["a) 1996", "b) 1995", "c) 1994", "d) None of the above"],
+    "correct_answer": "b) 1995"
+  },
+  {
+    "question": "6. What is the programming language used for developing mobile apps with React Native?",
+    "options": ["a) JavaScript", "b) Java", "c) C++", "d) Swift"],
+    "correct_answer": "a) JavaScript"
+  },
+  {
+    "question": "7. What is the fundamental building block of a web page?",
+    "options": ["a) HTML", "b) CSS", "c) JavaScript", "d) XML"],
+    "correct_answer": "a) HTML"
+  },
+  {
+    "question": "8. What does API stand for in web programming?",
+    "options": [
+      "a) Advanced Programming Interface",
+      "b) Application Programming Interface",
+      "c) Advanced Protocol Interface",
+      "d) Application Protocol Interface"
+    ],
+    "correct_answer": "b) Application Programming Interface"
+  },
+  {
+    "question": "9. What is the language used for adding dynamic behavior to web pages?",
+    "options": ["a) HTML", "b) CSS", "c) JavaScript", "d) Python"],
+    "correct_answer": "c) JavaScript"
+  },
+  {
+    "question": "10. What is the abbreviation for SQL?",
+    "options": [
+      "a) Structured Query Language",
+      "b) System Query Language",
+      "c) Server Query Language",
+      "d) Standard Query Language"
+    ],
+    "correct_answer": "a) Structured Query Language"
+  }
+]

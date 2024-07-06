@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Header section -->
+    <header>
+      <h1><span>Quiz</span> App</h1>
+    </header>
+
+    <!-- Main content section -->
+    <main>
+      <!-- Question number -->
+      <article class="question-number"></article>
+
+      <!-- Question Area -->
+      <section class="question">
+        <h2></h2>
+      </section>
+
+      <!-- Choices Area -->
+      <section class="choices-area"></section>
+
+      <!-- Submit Input -->
+      <button id="submit" type="button">Submit</button>
+
+      <!-- Bullets and Countdown -->
+      <div class="bullets">
+        <div class="spans">
+          <div class="progress" id="progress"></div>
+          <!-- Bullets created dynamically by JavaScript -->
+        </div>
+        <div class="countdown">30:00</div>
+      </div>
+    </main>
+
+    <!-- Include your project's JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <!-- Include Font Awesome JavaScript library -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"
+      integrity="sha512-u3fPA7V8qQmhBPNT5quvaXVa1mnnLSXUep5PS1qo5NRzHwG19aHmNJnj1Q8hpA/nBWZtZD4r4AX6YOt5ynLN2g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>

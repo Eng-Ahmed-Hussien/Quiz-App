@@ -1,0 +1,418 @@
+/* Import Google Fonts for Poppins font family */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;900&display=swap");
+
+/* Global CSS Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Define CSS custom properties (variables) */
+:root {
+  --main-bg-color: #121212;
+  /* Main background color */
+  --main-text-color: #ddd;
+  /* Main text color */
+  --main-bg-element: #645caa;
+  /* Background color for certain elements */
+  --effect-color: #1298e0;
+  /* Color for effects or highlights */
+  --question-color: #a096f9;
+  /* Color for question text */
+  --line-border-fill: #3498db;
+  --line-border-empty: #383838;
+}
+
+/* Base Styles for the Body */
+body {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+
+/* Styles for 'light' mode */
+body.light {
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+}
+
+/* Header Styles */
+header {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  padding: 10px 20px;
+}
+
+header h1 {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+header h1 span {
+  color: var(--main-bg-element);
+}
+
+/* Header Decorations */
+header::before,
+header::after {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: #77777769;
+  position: absolute;
+  top: 100%;
+}
+
+/* Position header decorations */
+header::before {
+  left: 17%;
+}
+
+header::after {
+  right: 17%;
+}
+
+/* Main Content Styles */
+main {
+  margin: 40px auto;
+  width: 90%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  position: relative;
+}
+
+/* Question Styles */
+.question {
+  margin-top: 20px;
+  height: 120px;
+}
+
+.question h2 {
+  color: var(--question-color);
+  line-height: 2;
+}
+
+/* Question Number Styles */
+.question-number {
+  position: absolute;
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  left: 50%;
+  top: -27px;
+  transform: translate(-50%, -50%);
+  animation: wave 2s infinite;
+}
+
+/* Animation for question number */
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Styling for question number background */
+.question-number::before {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--main-bg-element);
+  content: "";
+  position: absolute;
+  opacity: 0.8;
+  mix-blend-mode: color;
+  animation: ripple 3s infinite;
+}
+
+/* Animation for question number background */
+@keyframes ripple {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(0.9);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(0.5);
+    opacity: 0.8;
+  }
+}
+
+/* Progress Bar Styles */
+.progress-question {
+  width: 100%;
+}
+
+/* Progress Bar Filling Styles */
+.progress-question .progress-bar {
+  width: 100%;
+  height: 3px;
+  border-radius: 5px;
+  background-color: var(--main-text-color);
+}
+
+/* Progress Bar Load Animation */
+.progress-load {
+  width: 0%;
+  height: 100%;
+  background: var(--effect-color);
+  border-radius: inherit;
+}
+
+/* Choices Area Styles */
+.choices-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  padding: 10px;
+  width: 100%;
+}
+
+#result-container {
+  display: none;
+}
+
+/* Radio Button and Label Styles */
+.choices-area input,
+.choices-area label {
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+  line-height: 2;
+}
+
+/* Label Hover Effect */
+label:hover {
+  color: var(--main-bg-element);
+}
+
+/* Styles for Choice Container */
+.choose {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  width: 100%;
+}
+
+/* Bullets Container Styles */
+.bullets {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.spans::before {
+  content: "";
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+/* Styles for Spans (Bullets) Container */
+.spans {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 450px;
+}
+
+/* Span (Bullet) Styles */
+.spans>span {
+  background-color: #1f1f1f;
+  color: #e2e2e2;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--line-border-empty);
+  transition: 0.4s ease;
+}
+
+/* Styles for Active (on) Spans */
+.spans>span.on {
+  border-color: var(--line-border-fill);
+}
+
+/* Countdown Styles */
+.countdown {
+  text-align: center;
+  padding: 10px;
+  color: var(--effect-color);
+  font-size: 1.3em;
+  user-select: none;
+  position: relative;
+}
+
+.countdown::before {
+  content: "Time waits for you: ";
+  text-transform: capitalize;
+  color: var(--main-text-color);
+}
+
+/* Submit Button Styles */
+#submit {
+  width: 90%;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: var(--main-bg-element);
+  color: var(--main-text-color);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 10px auto;
+}
+
+#submit.stop {
+  background-color: #777;
+  user-select: none;
+  color: black;
+  pointer-events: none;
+}
+
+/* Submit Button Hover Effect */
+#submit:hover {
+  background-color: var(--question-color);
+  color: var(--main-bg-color);
+}
+
+/* Responsive Design for Small Screens (e.g., mobile phones) */
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+
+  main {
+    width: 100%;
+    padding: 10px 15px;
+  }
+
+  .question-number {
+    font-size: 0.8rem;
+  }
+
+  .question h2 {
+    font-size: 1rem;
+  }
+
+  .choices-area input,
+  .choices-area label {
+    font-size: 1.1rem;
+  }
+
+  header::before {
+    left: 10%;
+  }
+
+  header::after {
+    right: 10%;
+  }
+
+  .countdown {
+    padding: 5px 1px;
+    font-size: 1.2rem;
+  }
+
+  .bullets {
+    gap: 12px;
+    flex-direction: column;
+  }
+}
+
+/* Responsive Design for Tablet Screens */
+@media (max-width: 1024px) {
+  body {
+    font-size: 1.2rem;
+  }
+
+  /* Any additional adjustments needed for tablet screens */
+}
+
+/* Styles for Screens Larger Than 1024 Pixels (Computers) */
+@media (min-width: 1025px) {
+  body {
+    font-size: 1.2rem;
+  }
+
+  /* Any additional adjustments needed for computer screens */
+}
+
+/* Result Styles */
+.result {
+  width: 80%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.result::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: var(--main-bg-element);
+  transform: translate(-50%, -22px);
+}
+
+.your-result {
+  padding: 4px;
+  margin: 0 3px;
+  color: var(--main-text-color);
+  font-size: 1.2rem;
+}
